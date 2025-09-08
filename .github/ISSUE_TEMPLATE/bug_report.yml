@@ -1,0 +1,1 @@
+---nname: Bug reportndescription: Report a bug to help us improventitle: "[Bug]: "nlabels: bugnbody:n  - type: textarean    id: what-happenedn    attributes:n      label: What happened?n      description: Also tell us what you expected to happenn      placeholder: Tell us what's wrongn    validations:n      required: true
