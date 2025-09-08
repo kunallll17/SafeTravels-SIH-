@@ -10,10 +10,12 @@ export const AuthWrapper: React.FC<AuthWrapperProps> = ({ onAuthenticated }) => 
   const [authMode, setAuthMode] = useState<'login' | 'signup'>('login');
 
   const handleLogin = () => {
+    console.log('AuthWrapper: Login successful, calling onAuthenticated');
     onAuthenticated();
   };
 
   const handleSignUp = () => {
+    console.log('AuthWrapper: SignUp successful, calling onAuthenticated');
     onAuthenticated();
   };
 
