@@ -28,3 +28,4 @@ export const GradientView: React.FC<GradientViewProps> = ({
     </View>
   );
 };
+
