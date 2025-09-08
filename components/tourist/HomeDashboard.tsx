@@ -173,7 +173,7 @@ export const HomeDashboard: React.FC<HomeDashboardProps> = ({
       <View style={styles.actionsSection}>
         <View style={styles.emergencyHeader}>
           <Ionicons name="warning" size={24} color={colors.danger[500]} />
-          <Text style={styles.sectionTitle}>Emergency Actions</Text>
+        <Text style={styles.sectionTitle}>Emergency Actions</Text>
         </View>
         
         {/* Emergency SOS - Primary */}
@@ -260,9 +260,9 @@ export const HomeDashboard: React.FC<HomeDashboardProps> = ({
       <Card variant="elevated" style={styles.profileCard}>
         <View style={styles.profileHeaderSection}>
           <View style={styles.profileAvatarContainer}>
-            <View style={styles.profileAvatar}>
+          <View style={styles.profileAvatar}>
               <Ionicons name="person" size={40} color={colors.primary[600]} />
-            </View>
+          </View>
             <View style={styles.profileBadge}>
               <Ionicons name="checkmark-circle" size={20} color={colors.success} />
             </View>
@@ -271,12 +271,12 @@ export const HomeDashboard: React.FC<HomeDashboardProps> = ({
             <Text style={styles.profileName}>{tourist.name}</Text>
             <View style={styles.profileNationalityRow}>
               <Ionicons name="flag" size={16} color={colors.text.secondary} />
-              <Text style={styles.profileNationality}>{tourist.nationality}</Text>
-            </View>
+            <Text style={styles.profileNationality}>{tourist.nationality}</Text>
+          </View>
             <View style={styles.profileStatusRow}>
               <View style={styles.statusIndicator} />
               <Text style={styles.profileStatus}>Active Traveler</Text>
-            </View>
+        </View>
           </View>
           <TouchableOpacity style={styles.editButton}>
             <Ionicons name="pencil" size={18} color={colors.primary[600]} />
@@ -292,7 +292,7 @@ export const HomeDashboard: React.FC<HomeDashboardProps> = ({
           </View>
           <Text style={styles.statNumber}>
             {Math.ceil((new Date(tourist.tripDuration.endDate).getTime() - new Date(tourist.tripDuration.startDate).getTime()) / (1000 * 3600 * 24))}
-          </Text>
+            </Text>
           <Text style={styles.statLabel}>Days Trip</Text>
         </Card>
         
@@ -483,7 +483,7 @@ export const HomeDashboard: React.FC<HomeDashboardProps> = ({
           <View style={styles.settingContent}>
             <Text style={styles.settingTitle}>Edit Profile</Text>
             <Text style={styles.settingSubtitle}>Update your personal information</Text>
-          </View>
+        </View>
           <Ionicons name="chevron-forward" size={20} color={colors.text.tertiary} />
         </TouchableOpacity>
         
@@ -494,14 +494,14 @@ export const HomeDashboard: React.FC<HomeDashboardProps> = ({
           <View style={styles.settingContent}>
             <Text style={styles.settingTitle}>Change Password</Text>
             <Text style={styles.settingSubtitle}>Update your account password</Text>
-          </View>
+        </View>
           <Ionicons name="chevron-forward" size={20} color={colors.text.tertiary} />
         </TouchableOpacity>
         
         <TouchableOpacity style={styles.settingItem}>
           <View style={styles.settingIcon}>
             <Ionicons name="shield-outline" size={20} color={colors.text.secondary} />
-          </View>
+        </View>
           <View style={styles.settingContent}>
             <Text style={styles.settingTitle}>Privacy Settings</Text>
             <Text style={styles.settingSubtitle}>Manage your privacy preferences</Text>
