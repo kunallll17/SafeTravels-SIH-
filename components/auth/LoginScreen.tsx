@@ -61,9 +61,11 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({
   }, []);
 
   const handleLogin = async () => {
+    console.log('Login button pressed!', { email, password });
     setIsLoading(true);
     // Simulate API call
     setTimeout(() => {
+      console.log('Login successful, calling onLogin');
       setIsLoading(false);
       onLogin();
     }, 1500);
@@ -173,11 +175,32 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({
             {/* Login Button */}
             <Button
               title={isLoading ? 'Signing In...' : 'Sign In'}
-              onPress={handleLogin}
-              disabled={isLoading || !email || !password}
+              onPress={() => {
+                console.log('Sign In button pressed!');
+                handleLogin();
+              }}
+              disabled={isLoading}
               style={styles.loginButton}
               size="lg"
             />
+            
+            {/* Demo Mode Info */}
+            {(!email || !password) && (
+              <View style={styles.demoContainer}>
+                <Text style={styles.demoText}>
+                  Demo Mode: You can sign in without credentials to test the app
+                </Text>
+                <TouchableOpacity 
+                  style={styles.skipButton}
+                  onPress={() => {
+                    console.log('Skip authentication pressed');
+                    onLogin();
+                  }}
+                >
+                  <Text style={styles.skipButtonText}>Skip Authentication (Demo)</Text>
+                </TouchableOpacity>
+              </View>
+            )}
 
             {/* Divider */}
             <View style={styles.divider}>
@@ -300,8 +323,32 @@ const styles = StyleSheet.create({
     fontWeight: typography.fontWeights.medium,
   },
   loginButton: {
-    marginBottom: spacing[8],
+    marginBottom: spacing[4],
     backgroundColor: colors.primary[600],
+  },
+  demoContainer: {
+    marginBottom: spacing[6],
+    alignItems: 'center',
+  },
+  demoText: {
+    fontSize: typography.fontSizes.sm,
+    color: colors.text.tertiary,
+    textAlign: 'center',
+    marginBottom: spacing[3],
+    fontStyle: 'italic',
+  },
+  skipButton: {
+    backgroundColor: colors.secondary[100],
+    paddingHorizontal: spacing[4],
+    paddingVertical: spacing[2],
+    borderRadius: borderRadius.md,
+    borderWidth: 1,
+    borderColor: colors.secondary[300],
+  },
+  skipButtonText: {
+    fontSize: typography.fontSizes.sm,
+    color: colors.secondary[700],
+    fontWeight: typography.fontWeights.medium,
   },
   divider: {
     flexDirection: 'row',
